@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  build-and-test:  
+    docker:
+      - image: cimg/openjdk:11.0
+    steps:
+      - checkout
+      - run: sudo apt-get install -y git
+      - run: |
+          wget https://download.checkmarx.com/9.3.0GA/Plugins/CxConsolePlugin-1.1.5.zip
+          mkdir CxConsolePlugin
+          unzip CxConsolePlugin-1.1.5.zip -d CxConsolePlugin
+          cd CxConsolePlugin
+          chmod +x runCxConsole.sh
+          pwd
+          ./runCxConsole.sh Scan -CxServer https://picpay.checkmarx.net/ -TrustedCertificates -CxUser picpayAdmin@Cx.com -CxPassword stU*m[49tYXX9nn -LocationType "folder" -Projectname "/CxServer/Java/JavaWebGoat_Default" -LocationPath "/home/circleci/project"  -Comment "Build Id : $CI_PIPELINE_ID" -Preset "Checkmarx Default" -ForceScan
+workflows:
+  build_scan: 
+    jobs:
+      - build-and-test
+
