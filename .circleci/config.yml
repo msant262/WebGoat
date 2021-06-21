@@ -14,7 +14,7 @@ jobs:
           cd CxConsolePlugin
           chmod +x runCxConsole.sh
           pwd
-          ./runCxConsole.sh Scan -CxServer https://picpay.checkmarx.net/ -TrustedCertificates -CxUser picpayAdmin@Cx.com -CxPassword stU*m[49tYXX9nn -LocationType "folder" -Projectname "/CxServer/Java/JavaWebGoat_Default" -LocationPath "/home/circleci/project"  -Comment "Build Id : $CI_PIPELINE_ID" -Preset "Checkmarx Default" -ForceScan
+          ./runCxConsole.sh Scan -CxServer https://cxprivatecloud.checkmarx.net/ -TrustedCertificates -CxUser marcos.santos -CxPassword General123! -LocationType "folder" -Projectname "/CxServer/Java/JavaWebGoat_Default" -LocationPath "/home/circleci/project"  -Comment "Build Id : $CI_PIPELINE_ID" -Preset "Checkmarx Default" -ForceScan
 workflows:
   build_scan: 
     jobs:
