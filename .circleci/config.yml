@@ -14,7 +14,7 @@ jobs:
           cd CxConsolePlugin
           chmod +x runCxConsole.sh
           pwd
-          ./runCxConsole.sh Scan -CxServer https://cxprivatecloud.checkmarx.net/ -TrustedCertificates -CxUser marcos.santos -CxPassword General123! -LocationType "folder" -Projectname "/CxServer/SP/EMEA/LATAM/nova-8.com - 55/JavaWebGoat_Default" -LocationPath "/home/circleci/project"  -Comment "Build Id : $CI_PIPELINE_ID" -Preset "Checkmarx Default" -ForceScan
+          ./runCxConsole.sh Scan -CxServer https://lionx.checkmarx.net/ -TrustedCertificates -CxUser asr -CxPassword Teste@123 -LocationType "folder" -Projectname "/CxServer/JavaWebGoat_Default" -LocationPath "/home/circleci/project"  -Comment "Build Id : $CI_PIPELINE_ID" -Preset "Checkmarx Default" -ForceScan
 workflows:
   build_scan: 
     jobs:
